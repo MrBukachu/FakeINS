@@ -1,7 +1,6 @@
 package com.company.Process;
 
-import com.company.General.Const;
-import com.company.General.WriteFile;
+
 import com.company.SensorData.GNSSData;
 import com.company.TimeAndCoordinate.CalculatePara4;
 import com.company.TimeAndCoordinate.CommonPoint;
@@ -14,6 +13,7 @@ import java.util.*;
 
 /**
  * Created by mac on 9/23/14.
+ * 使用四参数校正平面位置
  */
 public class RectifyByPara4 {
 
@@ -50,7 +50,7 @@ public class RectifyByPara4 {
                     + tmpµCoså * dataBase.get(i).getGaussCoordinate().getGaussY()  ;
             tmp.add(new GNSSData(
                     dataBase.get(i).getGpst(),
-                    CoordinateTransform.gauss2blh(tmpGaussX, tmpGaussY, 8.888),    //此时的blh是错误数据
+                    CoordinateTransform.gauss2blh(tmpGaussX, tmpGaussY, 9.448),    //此时的blh是错误数据
                     "Rectified",42
             ));
 //            String str = dataBase.get(i).getGpst().displayUTC() + " " +
